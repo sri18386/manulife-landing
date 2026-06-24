@@ -34,7 +34,9 @@
   .brand img{display:block;width:auto}
   .logo-manulife{height:22px}
   .logo-accenture{height:15px}
-  .logo-lyzr{height:19px}
+  .brand-lyzr{display:inline-flex;align-items:center;gap:7px}
+  .logo-lyzr-icon{height:23px;border-radius:6px;display:block}
+  .lyzr-word{font-weight:700;font-size:17px;color:var(--ink);letter-spacing:-.01em}
   .brand .x{color:#c3b8a6;font-weight:300;font-size:16px}
   nav.links{display:flex;gap:26px;align-items:center}
   nav.links a{font-size:14px;font-weight:500;color:var(--ink-2)}
@@ -45,7 +47,7 @@
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
   .btn-ghost:hover{border-color:var(--green);color:var(--green-d)}
   @media(max-width:880px){nav.links{display:none}}
-  @media(max-width:540px){.brand .x,.logo-accenture,.logo-lyzr{display:none}}
+  @media(max-width:540px){.brand .x,.logo-accenture,.brand-lyzr{display:none}}
 
   /* HERO */
   .hero{position:relative;overflow:hidden;background:
@@ -179,7 +181,7 @@
       <span class="x">×</span>
       <img class="logo-accenture" src="assets/accenture.svg" alt="Accenture" />
       <span class="x">×</span>
-      <img class="logo-lyzr" src="assets/lyzr.png" alt="Lyzr" />
+      <span class="brand-lyzr"><img class="logo-lyzr-icon" src="assets/lyzr_icon.png" alt="" /><span class="lyzr-word">Lyzr</span></span>
     </div>
     <nav class="links">
       <a href="#fabric">The fabric</a>
@@ -286,7 +288,7 @@
       <div class="embed" data-embed="onboarding">
         <div class="embed-bar"><div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div><div class="url">manulife-underwriting-web.onrender.com/onboarding-live</div><a class="open" target="_blank" rel="noopener">Open ↗</a></div>
         <div class="embed-stage">
-          <div class="embed-cover"><div class="play">▶</div><b style="font-size:17px">Launch the live onboarding journey</b><p>Runs Shikhar's app inline. First load may take a few seconds to wake the server.</p></div>
+          <div class="embed-cover"><div class="play">▶</div><b style="font-size:17px">Launch the live onboarding journey</b><p>Opens the live app in a new tab — first load may take ~30s to wake the server.</p></div>
         </div>
       </div>
     </div>
@@ -421,13 +423,7 @@
     const cover = box.querySelector('.embed-cover');
     const stage = box.querySelector('.embed-stage');
     cover.style.cursor = 'pointer';
-    cover.addEventListener('click', () => {
-      const f = document.createElement('iframe');
-      f.src = url; f.loading = 'lazy'; f.allow = 'camera; microphone';
-      f.title = 'Manulife ' + key + ' journey';
-      stage.innerHTML = ''; stage.appendChild(f);
-      setTimeout(() => { if (!f.contentWindow || f.clientHeight < 10) window.open(url, '_blank'); }, 6000);
-    });
+    cover.addEventListener('click', () => { window.open(url, '_blank', 'noopener'); });
   });
 </script>
 </body>
