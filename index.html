@@ -105,10 +105,14 @@
   /* THREE PAYOFFS */
   .pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   @media(max-width:860px){.pay-grid{grid-template-columns:1fr}}
-  .pay{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+  .pay{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow);transition:.16s}
+  .pay[data-applink]{cursor:pointer}
+  .pay[data-applink]:hover{transform:translateY(-3px);box-shadow:var(--shadow-l);border-color:#d9cdb8}
   .pay .ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:22px;margin-bottom:14px}
   .pay h3{font-size:20px;font-weight:600}
   .pay p{font-size:14px;color:var(--ink-2);margin:9px 0 0}
+  .pay-cta{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--green-d)}
+  .pay[data-applink]:hover .pay-cta{text-decoration:underline}
 
   /* JOURNEY / EMBED */
   .journey{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:center}
@@ -229,8 +233,8 @@
     </div>
 
     <div class="fabric-callout">
-      <a class="chip-demo" href="#onboarding">▶ Live demo today — Customer Onboarding &amp; Underwriting</a>
-      <a class="chip-future" href="#intelligence">→ Eventually, the entire lifecycle enhances OGI</a>
+      <a class="chip-demo" data-applink="onboarding">▶ Live demo today — Customer Onboarding &amp; Underwriting ↗</a>
+      <a class="chip-future" data-applink="intelligence">→ Eventually, the entire lifecycle enhances OGI ↗</a>
     </div>
 
     <div class="vc-band">Life Insurance Value Chain — India Market · IRDAI regulated</div>
@@ -259,9 +263,9 @@
     </div>
 
     <div class="pay-grid" style="margin-top:46px">
-      <div class="pay"><div class="ic" style="background:var(--green-soft)">👤</div><h3>Customer Onboarding</h3><p>An AI-guided, multilingual, mobile-first journey — from a shared link to a clean, fraud-checked, pre-scored proposal in minutes.</p></div>
-      <div class="pay"><div class="ic" style="background:#e6f1f4">🩺</div><h3>Underwriting</h3><p>AI extracts the medicals, screens complications and computes a transparent mortality rating — with the underwriter signing off.</p></div>
-      <div class="pay"><div class="ic" style="background:var(--gold-soft)">📊</div><h3>Organizational Intelligence</h3><p>Every issued policy moves the live India risk map and portfolio view — and feeds back to sharpen pricing and triage.</p></div>
+      <div class="pay" data-applink="onboarding"><div class="ic" style="background:var(--green-soft)">👤</div><h3>Customer Onboarding</h3><p>An AI-guided, multilingual, mobile-first journey — from a shared link to a clean, fraud-checked, pre-scored proposal in minutes.</p><span class="pay-cta">See it live ↗</span></div>
+      <div class="pay" data-applink="underwriting"><div class="ic" style="background:#e6f1f4">🩺</div><h3>Underwriting</h3><p>AI extracts the medicals, screens complications and computes a transparent mortality rating — with the underwriter signing off.</p><span class="pay-cta">See it live ↗</span></div>
+      <div class="pay" data-applink="intelligence"><div class="ic" style="background:var(--gold-soft)">📊</div><h3>Organizational Intelligence</h3><p>Every issued policy moves the live India risk map and portfolio view — and feeds back to sharpen pricing and triage.</p><span class="pay-cta">See it live ↗</span></div>
     </div>
   </div>
 </section>
@@ -417,6 +421,14 @@
     underwriting: "/underwriting",
     intelligence: "/intelligence"
   };
+  // Direct "open Shikhar's app" links — chips and capability cards
+  document.querySelectorAll('[data-applink]').forEach(el => {
+    const url = APP + (ROUTES[el.getAttribute('data-applink')] || "/");
+    el.style.cursor = 'pointer';
+    if (el.tagName === 'A') { el.href = url; el.target = '_blank'; el.rel = 'noopener'; }
+    else { el.addEventListener('click', () => window.open(url, '_blank', 'noopener')); }
+  });
+
   document.querySelectorAll('.embed').forEach(box => {
     const key = box.getAttribute('data-embed');
     const url = APP + (ROUTES[key] || "/");
