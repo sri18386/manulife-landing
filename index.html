@@ -77,8 +77,10 @@
 
   /* FABRIC / VALUE CHAIN */
   .fabric-callout{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 34px}
-  .chip-demo{display:inline-flex;align-items:center;gap:9px;background:var(--green-soft);border:1px solid #bfe6cd;color:var(--green-d);font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px}
-  .chip-future{display:inline-flex;align-items:center;gap:9px;background:var(--gold-soft);border:1px solid #e7cfa6;color:var(--brown);font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px}
+  .chip-demo{display:inline-flex;align-items:center;gap:9px;background:var(--green-soft);border:1px solid #bfe6cd;color:var(--green-d);font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;text-decoration:none;cursor:pointer;transition:.15s}
+  .chip-demo:hover{background:#cfead9;border-color:#a6dcbb}
+  .chip-future{display:inline-flex;align-items:center;gap:9px;background:var(--gold-soft);border:1px solid #e7cfa6;color:var(--brown);font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;text-decoration:none;cursor:pointer;transition:.15s}
+  .chip-future:hover{background:#ecdab9;border-color:#dcbd8e}
   .vc-band{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:16px}
   .vc-band:after{content:"";flex:1;height:1px;background:var(--line)}
   .chain{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
@@ -227,8 +229,8 @@
     </div>
 
     <div class="fabric-callout">
-      <span class="chip-demo">▶ Live demo today — Customer Onboarding &amp; Underwriting</span>
-      <span class="chip-future">→ Eventually, the entire lifecycle enhances OGI</span>
+      <a class="chip-demo" href="#onboarding">▶ Live demo today — Customer Onboarding &amp; Underwriting</a>
+      <a class="chip-future" href="#intelligence">→ Eventually, the entire lifecycle enhances OGI</a>
     </div>
 
     <div class="vc-band">Life Insurance Value Chain — India Market · IRDAI regulated</div>
