@@ -61,13 +61,9 @@
   .pill{display:inline-flex;align-items:center;gap:8px;background:var(--green-soft);border:1px solid #bfe6cd;color:var(--green-d);font-size:12.5px;font-weight:600;padding:7px 15px;border-radius:999px;letter-spacing:.03em}
   .hero-card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow-l)}
   .flow3{display:flex;flex-direction:column;gap:11px}
-  .flow3 .node{display:flex;align-items:center;gap:14px;background:var(--cream);border:1px solid var(--line);border-radius:13px;padding:13px 15px;transition:.15s}
-  .flow3 .node[data-applink]{cursor:pointer}
-  .flow3 .node[data-applink]:hover{border-color:var(--green);background:#fff;box-shadow:0 6px 16px rgba(0,167,88,.1)}
+  .flow3 .node{display:flex;align-items:center;gap:14px;background:var(--cream);border:1px solid var(--line);border-radius:13px;padding:13px 15px}
   .flow3 .node b{font-size:15px;font-weight:600}
   .flow3 .node>div span{font-size:12.5px;color:var(--slate)}
-  .node-go{margin-left:auto;font-size:15px;color:var(--slate);opacity:.5;transition:.15s}
-  .flow3 .node[data-applink]:hover .node-go{opacity:1;color:var(--green-d)}
   .flow3 .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:17px;flex:0 0 auto}
   .loop{font-family:var(--mono);font-size:11px;color:var(--gold);text-align:center;margin-top:10px}
   @media(max-width:920px){.hero-in{grid-template-columns:1fr;padding:64px 0}.hero h1{font-size:40px}}
@@ -81,10 +77,8 @@
 
   /* FABRIC / VALUE CHAIN */
   .fabric-callout{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 34px}
-  .chip-demo{display:inline-flex;align-items:center;gap:9px;background:var(--green-soft);border:1px solid #bfe6cd;color:var(--green-d);font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;text-decoration:none;cursor:pointer;transition:.15s}
-  .chip-demo:hover{background:#cfead9;border-color:#a6dcbb}
-  .chip-future{display:inline-flex;align-items:center;gap:9px;background:var(--gold-soft);border:1px solid #e7cfa6;color:var(--brown);font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;text-decoration:none;cursor:pointer;transition:.15s}
-  .chip-future:hover{background:#ecdab9;border-color:#dcbd8e}
+  .chip-demo{display:inline-flex;align-items:center;gap:9px;background:var(--green-soft);border:1px solid #bfe6cd;color:var(--green-d);font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px}
+  .chip-future{display:inline-flex;align-items:center;gap:9px;background:var(--gold-soft);border:1px solid #e7cfa6;color:var(--brown);font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px}
   .vc-band{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:16px}
   .vc-band:after{content:"";flex:1;height:1px;background:var(--line)}
   .chain{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
@@ -110,13 +104,13 @@
   .pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   @media(max-width:860px){.pay-grid{grid-template-columns:1fr}}
   .pay{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow);transition:.16s}
-  .pay[data-applink]{cursor:pointer}
-  .pay[data-applink]:hover{transform:translateY(-3px);box-shadow:var(--shadow-l);border-color:#d9cdb8}
+  .pay[data-scroll]{cursor:pointer}
+  .pay[data-scroll]:hover{transform:translateY(-3px);box-shadow:var(--shadow-l);border-color:#d9cdb8}
   .pay .ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:22px;margin-bottom:14px}
   .pay h3{font-size:20px;font-weight:600}
   .pay p{font-size:14px;color:var(--ink-2);margin:9px 0 0}
   .pay-cta{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--green-d)}
-  .pay[data-applink]:hover .pay-cta{text-decoration:underline}
+  .pay[data-scroll]:hover .pay-cta{text-decoration:underline}
 
   /* JOURNEY / EMBED */
   .journey{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:center}
@@ -218,9 +212,9 @@
     </div>
     <div class="hero-card">
       <div class="flow3">
-        <div class="node" data-applink="onboarding"><span class="ic" style="background:var(--green-soft)">👤</span><div><b>Customer Onboarding</b><br><span>Link → KYC → AI health intake → pre-score</span></div><span class="node-go">↗</span></div>
-        <div class="node" data-applink="underwriting"><span class="ic" style="background:#e6f1f4">🩺</span><div><b>Underwriting</b><br><span>Lab extraction → rating → human sign-off</span></div><span class="node-go">↗</span></div>
-        <div class="node" data-applink="intelligence"><span class="ic" style="background:var(--gold-soft)">📊</span><div><b>Organizational Intelligence</b><br><span>Live risk map · portfolio vs IRDAI</span></div><span class="node-go">↗</span></div>
+        <div class="node"><span class="ic" style="background:var(--green-soft)">👤</span><div><b>Customer Onboarding</b><br><span>Link → KYC → AI health intake → pre-score</span></div></div>
+        <div class="node"><span class="ic" style="background:#e6f1f4">🩺</span><div><b>Underwriting</b><br><span>Lab extraction → rating → human sign-off</span></div></div>
+        <div class="node"><span class="ic" style="background:var(--gold-soft)">📊</span><div><b>Organizational Intelligence</b><br><span>Live risk map · portfolio vs IRDAI</span></div></div>
       </div>
       <div class="loop">↑ every journey feeds back to sharpen the next ↑</div>
     </div>
@@ -237,8 +231,8 @@
     </div>
 
     <div class="fabric-callout">
-      <a class="chip-demo" data-applink="onboarding">▶ Live demo today — Customer Onboarding &amp; Underwriting ↗</a>
-      <a class="chip-future" data-applink="intelligence">→ Eventually, the entire lifecycle enhances OGI ↗</a>
+      <span class="chip-demo">▶ Live demo today — Customer Onboarding &amp; Underwriting</span>
+      <span class="chip-future">→ Eventually, the entire lifecycle enhances OGI</span>
     </div>
 
     <div class="vc-band">Life Insurance Value Chain — India Market · IRDAI regulated</div>
@@ -267,9 +261,9 @@
     </div>
 
     <div class="pay-grid" style="margin-top:46px">
-      <div class="pay" data-applink="onboarding"><div class="ic" style="background:var(--green-soft)">👤</div><h3>Customer Onboarding</h3><p>An AI-guided, multilingual, mobile-first journey — from a shared link to a clean, fraud-checked, pre-scored proposal in minutes.</p><span class="pay-cta">See it live ↗</span></div>
-      <div class="pay" data-applink="underwriting"><div class="ic" style="background:#e6f1f4">🩺</div><h3>Underwriting</h3><p>AI extracts the medicals, screens complications and computes a transparent mortality rating — with the underwriter signing off.</p><span class="pay-cta">See it live ↗</span></div>
-      <div class="pay" data-applink="intelligence"><div class="ic" style="background:var(--gold-soft)">📊</div><h3>Organizational Intelligence</h3><p>Every issued policy moves the live India risk map and portfolio view — and feeds back to sharpen pricing and triage.</p><span class="pay-cta">See it live ↗</span></div>
+      <div class="pay" data-scroll="onboarding"><div class="ic" style="background:var(--green-soft)">👤</div><h3>Customer Onboarding</h3><p>An AI-guided, multilingual, mobile-first journey — from a shared link to a clean, fraud-checked, pre-scored proposal in minutes.</p><span class="pay-cta">Explore the journey ↓</span></div>
+      <div class="pay" data-scroll="underwriting"><div class="ic" style="background:#e6f1f4">🩺</div><h3>Underwriting</h3><p>AI extracts the medicals, screens complications and computes a transparent mortality rating — with the underwriter signing off.</p><span class="pay-cta">Explore the journey ↓</span></div>
+      <div class="pay" data-scroll="intelligence"><div class="ic" style="background:var(--gold-soft)">📊</div><h3>Organizational Intelligence</h3><p>Every issued policy moves the live India risk map and portfolio view — and feeds back to sharpen pricing and triage.</p><span class="pay-cta">Explore ↓</span></div>
     </div>
   </div>
 </section>
@@ -425,14 +419,15 @@
     underwriting: "/underwriting",
     intelligence: "/intelligence"
   };
-  // Direct "open Shikhar's app" links — chips and capability cards
-  document.querySelectorAll('[data-applink]').forEach(el => {
-    const url = APP + (ROUTES[el.getAttribute('data-applink')] || "/");
-    el.style.cursor = 'pointer';
-    if (el.tagName === 'A') { el.href = url; el.target = '_blank'; el.rel = 'noopener'; }
-    else { el.addEventListener('click', () => window.open(url, '_blank', 'noopener')); }
+  // Capability cards scroll down to their journey section (internal navigation)
+  document.querySelectorAll('[data-scroll]').forEach(el => {
+    el.addEventListener('click', () => {
+      const t = document.getElementById(el.getAttribute('data-scroll'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   });
 
+  // Only the journey/intelligence section panels launch Shikhar's app (new tab)
   document.querySelectorAll('.embed').forEach(box => {
     const key = box.getAttribute('data-embed');
     const url = APP + (ROUTES[key] || "/");
