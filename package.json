@@ -1,0 +1,9 @@
+{
+  "name": "manulife-accenture-lyzr-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Manulife x Accenture x Lyzr — agentic AI demo landing page (static)",
+  "scripts": {
+    "serve": "npx --yes serve ."
+  }
+}
